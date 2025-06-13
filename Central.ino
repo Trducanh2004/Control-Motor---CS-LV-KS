@@ -1,7 +1,3 @@
-// // Cấu hình Blynk
-// #define BLYNK_TEMPLATE_ID "TMPL6eL8SB4vv"
-// #define BLYNK_TEMPLATE_NAME "IoT and application"
-// #define BLYNK_AUTH_TOKEN "HJM6xzTvvXUqODvLACls9v32e7VHkc_5"
 #define BLYNK_TEMPLATE_ID "TMPL6VLBLn5wf"
 #define BLYNK_TEMPLATE_NAME "Control Motor"
 #define BLYNK_AUTH_TOKEN "2K6l9xL-6ELElgmyOYwJHV0HQKRzv4_-"
@@ -21,7 +17,7 @@ const char* password = "19102000";
 #define SETPOINT_CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26aa"
 #define DISTANCE_CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a9"
 
-// Địa chỉ MAC của server (thay bằng MAC thực tế của server)
+// Địa chỉ MAC của server
 const char* serverMacAddress = "14:33:5c:2f:c6:c6";
 
 // Biến toàn cục
@@ -148,7 +144,7 @@ void loop() {
                 Blynk.virtualWrite(V1, distance); // Gửi khoảng cách lên V1
               }
 
-              // Gửi setpoint từ Serial Monitor (tùy chọn)
+              // Gửi setpoint từ Serial Monitor
               if (Serial.available()) {
                 String input = Serial.readStringUntil('\n');
                 input.trim();
