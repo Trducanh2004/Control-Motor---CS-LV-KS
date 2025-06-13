@@ -34,6 +34,7 @@ BLECharacteristic distanceCharacteristic;
 // Hàm gọi khi Blynk gửi setpoint qua Virtual Pin V2
 BLYNK_WRITE(V2) {
   int setpoint = param.asInt();
+  setpoint = setpoint * 600/280; //Chuyển rpm sang pulse
   if (setpoint >= 0 && setpointCharacteristic && setpointCharacteristic.canWrite()) {
     String setpointStr = String(setpoint);
     setpointCharacteristic.writeValue(setpointStr.c_str());
